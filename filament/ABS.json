@@ -1,0 +1,22 @@
+{
+    "filament_flow_ratio": [
+        "1"
+    ],
+    "filament_settings_id": [
+        "ABS"
+    ],
+    "from": "User",
+    "inherits": "My Generic ABS",
+    "is_custom_defined": "0",
+    "name": "ABS",
+    "nozzle_temperature": [
+        "240"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "240"
+    ],
+    "nozzle_temperature_range_high": [
+        "250"
+    ],
+    "version": "2.0.2.0"
+}

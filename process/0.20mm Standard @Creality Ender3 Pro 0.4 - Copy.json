@@ -1,0 +1,15 @@
+{
+    "from": "User",
+    "gap_infill_speed": "20",
+    "inherits": "0.20mm Standard @Creality Ender3 Pro 0.4",
+    "inner_wall_speed": "20",
+    "internal_solid_infill_speed": "30",
+    "is_custom_defined": "0",
+    "name": "0.20mm Standard @Creality Ender3 Pro 0.4 - Copy",
+    "outer_wall_speed": "20",
+    "print_settings_id": "0.20mm Standard @Creality Ender3 Pro 0.4 - Copy",
+    "sparse_infill_speed": "30",
+    "support_speed": "30",
+    "top_surface_speed": "20",
+    "version": "2.0.2.0"
+}

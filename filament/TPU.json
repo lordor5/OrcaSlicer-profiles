@@ -1,0 +1,34 @@
+{
+    "default_filament_colour": [
+        "#8000FF"
+    ],
+    "filament_settings_id": [
+        "TPU"
+    ],
+    "filament_vendor": [
+        "SmartFill"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "50"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "60"
+    ],
+    "inherits": "My Generic TPU",
+    "is_custom_defined": "0",
+    "name": "TPU",
+    "nozzle_temperature": [
+        "220"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "220"
+    ],
+    "nozzle_temperature_range_high": [
+        "235"
+    ],
+    "nozzle_temperature_range_low": [
+        "220"
+    ],
+    "version": "2.1.1.0"
+}

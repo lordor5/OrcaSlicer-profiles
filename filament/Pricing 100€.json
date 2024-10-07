@@ -1,0 +1,13 @@
+{
+    "filament_cost": [
+        "100"
+    ],
+    "filament_settings_id": [
+        "Pricing 100€"
+    ],
+    "from": "User",
+    "inherits": "Creality Generic PETG",
+    "is_custom_defined": "0",
+    "name": "Pricing 100€",
+    "version": "2.1.1.0"
+}

@@ -1,0 +1,52 @@
+{
+    "filament_cost": [
+        "0"
+    ],
+    "filament_diameter": [
+        "1.6"
+    ],
+    "filament_flow_ratio": [
+        "1.25"
+    ],
+    "filament_max_volumetric_speed": [
+        "4"
+    ],
+    "filament_retraction_length": [
+        "0.8"
+    ],
+    "filament_settings_id": [
+        "PET"
+    ],
+    "filament_type": [
+        "PET-CF"
+    ],
+    "filament_vendor": [
+        "Recycled"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "60"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "70"
+    ],
+    "inherits": "My Generic PETG",
+    "is_custom_defined": "0",
+    "name": "PET",
+    "nozzle_temperature": [
+        "270"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "270"
+    ],
+    "nozzle_temperature_range_high": [
+        "280"
+    ],
+    "nozzle_temperature_range_low": [
+        "240"
+    ],
+    "temperature_vitrification": [
+        "180"
+    ],
+    "version": "2.0.2.0"
+}
