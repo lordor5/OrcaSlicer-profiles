@@ -6,7 +6,7 @@
         "Pricing 100€"
     ],
     "from": "User",
-    "inherits": "Creality Generic PETG",
+    "inherits": "My Generic PETG",
     "is_custom_defined": "0",
     "name": "Pricing 100€",
     "version": "2.1.1.0"
