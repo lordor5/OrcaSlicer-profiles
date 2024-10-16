@@ -1,0 +1,13 @@
+{
+    "from": "User",
+    "inherits": "Creality Ender-3 Pro 0.4 nozzle",
+    "is_custom_defined": "0",
+    "manual_filament_change": "1",
+    "name": "CR20",
+    "nozzle_type": "brass",
+    "printer_settings_id": "CR20",
+    "version": "2.1.1.0",
+    "z_hop": [
+        "0"
+    ]
+}
