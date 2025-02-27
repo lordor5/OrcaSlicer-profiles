@@ -1,4 +1,5 @@
 {
+    "bed_custom_texture": "C:\\\\Users\\\\Lordor\\\\Downloads\\\\Proyecto nuevo (3).png",
     "bed_exclude_area": [
         "10x10"
     ],
@@ -9,10 +10,10 @@
     "from": "User",
     "inherits": "MyKlipper 0.4 nozzle",
     "is_custom_defined": "0",
-    "machine_end_gcode": "G91 ;Relative positioning\nG1 Z10 ;Raise Z more\nG1 E-0.5 F2700 ;Retract a bit\nG1 E-0.5 Z0.2 F2400 ;Retract and raise Z\nG1 X5 Y5 F3000 ;Wipe out\nG90 ;Absolute positioning\n\nG1 X10 Y100 ;Present print\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\n\n;M84 X Y E ;Disable all steppers but Z\nPRINT_END",
+    "machine_end_gcode": "G91 ;Relative positioning\nG1 Z10 ;Raise Z more\nG1 E-0.5 F2700 ;Retract a bit\nG1 E-0.5 Z0.2 F2400 ;Retract and raise Z\nG1 X5 Y5 F3000 ;Wipe out\nG90 ;Absolute positioning\n\nG1 X10 Y100 ;Present print\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\n\n\n; Conditions for ejection:\n; Model must be taller than 40mm, and more than 60mm from the front of the bed\n{if max_layer_z > 40 && print_bed_min[1] > 60 }\n    ; Move toolhead to home position to avoid interference\n    G1 X0 Y0 F3000 ; Move toolhead to front-left corner\n\n    ; Move the bed to the front for ejection\n    G1 Y{print_bed_size[1]} F3000 ; Move bed forward to the front\n\n    ; Wait for bed to cool below 35\n    M190 R35 ; Wait for bed to cool down to 35\n\n    ; Eject the print by moving the bed backwards\n    G1 Y0 F3000 ; Move bed back to eject print\n{else} ; If criteria are not met, just finish without ejecting\n\n    M117 \"Eject criteria not met\n{endif}\n\n\n;M84 X Y E ;Disable all steppers but Z\nPRINT_END",
     "machine_start_gcode": "M104 S[nozzle_temperature_initial_layer]\nM190 S[bed_temperature_initial_layer_single]\nG28\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\nBED_MESH_CALIBRATE PROFILE=default\nBED_MESH_PROFILE LOAD=default\n\nM109 S[nozzle_temperature_initial_layer]\n\n; Ender 3 Custom Start G-code \n;G92 E0 ; Reset Extruder \n;G1 Z4.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed \n;G1 X2.1 Y20 Z4.0 F5000.0 ; Move to start position \n;G1 Z0.3 F500.0 ; Move to start position \n;G1 X2.1 Y200.0 Z0.3 F1500.0 E15 ; Draw the first line \n;G1 X2.4 Y200.0 Z0.3 F5000.0 ; Move to side a little \n;G1 X2.4 Y20 Z0.3 F1500.0 E30 ; Draw the second line \n;G92 E0 ; Reset Extruder \n;G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed \n;G1 X5 Y20 Z0.3 F5000.0 ; Move over to prevent blob squish\n\nG92 E0.0\nG1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]} Z0.8 F6000.0\nG1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]+30} E30 F360.0;\nG92 E0.0\nG1 E-0.5 F2100;\nG1 Y{first_layer_print_min[1]+40} F6000.0\nG29 E0.0\n",
     "manual_filament_change": "1",
-    "name": "Ender3 Klipper",
+    "name": "Ender3 - AutoEjection",
     "nozzle_type": "brass",
     "print_host": "10.10.10.8:5000",
     "printable_area": [
@@ -21,13 +22,13 @@
         "220x220",
         "0x220"
     ],
-    "printer_settings_id": "Ender3 Klipper",
+    "printer_settings_id": "Ender3 - AutoEjection",
     "printhost_apikey": "FF5DF755F49C426A85BC0832FECD2648",
     "retraction_length": [
         "1"
     ],
     "support_multi_bed_types": "1",
-    "time_cost": "1",
+    "time_cost": "0.2",
     "version": "1.6.1.0",
     "wipe_distance": [
         "0.5"

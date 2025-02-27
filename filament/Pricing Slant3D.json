@@ -1,0 +1,13 @@
+{
+    "filament_cost": [
+        "120"
+    ],
+    "filament_settings_id": [
+        "Pricing Slant3D"
+    ],
+    "from": "User",
+    "inherits": "My Generic PETG",
+    "is_custom_defined": "0",
+    "name": "Pricing Slant3D",
+    "version": "2.1.1.0"
+}
