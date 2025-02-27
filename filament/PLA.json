@@ -11,16 +11,28 @@
     "filament_max_volumetric_speed": [
         "5"
     ],
+    "filament_multitool_ramming": [
+        "1"
+    ],
     "filament_retraction_length": [
         "1.4"
     ],
     "filament_settings_id": [
         "PLA"
     ],
+    "filament_start_gcode": [
+        "; filament start gcode\nG1 E4.0 F2100; Extrude"
+    ],
     "from": "User",
     "inherits": "My Generic PLA",
     "is_custom_defined": "0",
     "name": "PLA",
+    "nozzle_temperature": [
+        "200"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "200"
+    ],
     "nozzle_temperature_range_high": [
         "220"
     ],

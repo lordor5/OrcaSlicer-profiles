@@ -1,0 +1,15 @@
+{
+    "enable_support": "1",
+    "flush_into_infill": "1",
+    "from": "User",
+    "infill_combination": "1",
+    "inherits": "0.20mm Standard @MyMarlin",
+    "is_custom_defined": "0",
+    "name": "0.20mm Standard @Sv04",
+    "ooze_prevention": "1",
+    "print_settings_id": "0.20mm Standard @Sv04",
+    "seam_slope_type": "all",
+    "slow_down_layers": "1",
+    "support_type": "tree(auto)",
+    "version": "2.2.0.4"
+}
