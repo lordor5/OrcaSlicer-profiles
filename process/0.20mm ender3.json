@@ -1,5 +1,4 @@
 {
-    "alternate_extra_wall": "1",
     "bottom_surface_pattern": "archimedeanchords",
     "brim_ears_detection_length": "0.1",
     "brim_width": "4",
@@ -22,7 +21,7 @@
     "internal_solid_infill_speed": "40",
     "is_custom_defined": "0",
     "is_infill_first": "1",
-    "layer_height": "0.3",
+    "layer_height": "0.2",
     "max_travel_detour_distance": "300",
     "name": "0.20mm ender3",
     "outer_wall_speed": "40",
