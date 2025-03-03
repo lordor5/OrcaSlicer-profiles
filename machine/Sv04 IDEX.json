@@ -19,7 +19,7 @@
         "0",
         "0"
     ],
-    "machine_end_gcode": "G1 E-1.0 F2100 ; retract\nG92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-2.0 F720 ; move print head up & retract filament\nG4 ; wait\nM104 T0 S0 ; turn off temperature\nM104 T1 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nG1 X0 Y105 F3000 ; park print head\nM84 ; disable motors",
+    "machine_end_gcode": "G1 E-1.0 F2100 ; retract\nG92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-2.0 F720 ; move print head up & retract filament\nG4 ; wait\nM104 T0 S0 ; turn off temperature\nM104 T1 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\n\nT1\n_PARK_TOOL\nT2\n_PARK_TOOL\n\n;G1 X0 Y105 F3000 ; park print head\n\n\nM84 ; disable motors",
     "machine_max_acceleration_x": [
         "6400"
     ],
@@ -36,7 +36,7 @@
         "40"
     ],
     "machine_pause_gcode": "PAUSE",
-    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 T0 S[first_layer_temperature] ; set extruder temp\nM104 T1 S[first_layer_temperature] ; Preheat the second extruder\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nG28 ; home all\nBED_MESH_PROFILE LOAD=default\n\n;G29 Bed Mesh not working on klipper\nG1 X0.0 Y1.0 Z0.3 F1000 ; move print head up\n\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n\n; draw the purge line\nG1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]} Z0.8 F{initial_layer_travel_speed}\nG1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]+30} E30 F{initial_layer_infill_speed};\nG92 E0.0\nG1 E-0.5 F2100;\nG1 Y{first_layer_print_min[1]+40} F6000.0\nG29 E0.0\n",
+    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 T0 S[first_layer_temperature] ; set extruder temp\n\n;M104 T1 S[first_layer_temperature] ; Preheat the second extruder\n\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nG28 ; home all\nZ_TILT_ADJUST\nBED_MESH_CALIBRATE\nBED_MESH_PROFILE SAVE=default\nBED_MESH_PROFILE LOAD=default\n\n;ACTIVATE_COPY_MODE\n;ACTIVATE_MIRROR_MODE\n\n;G29 Bed Mesh not working on klipper\n\n;G1 X0.0 Y1.0 Z0.3 F1000 ; move print head up\n\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n\n; draw the purge line\nG1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]} Z0.8 F{initial_layer_travel_speed}\nG1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]+15} E30 F{initial_layer_infill_speed};\nG29 E0.0\n\n\n;G1 E-0.5 F2100;\n;G1 Y{first_layer_print_min[1]+40} F6000.0\n;G29 E0.0\n",
     "max_layer_height": [
         "0.32",
         "0.32"
