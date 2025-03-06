@@ -1,9 +1,12 @@
 {
+    "close_fan_the_first_x_layers": [
+        "0"
+    ],
     "filament_cost": [
         "0"
     ],
     "filament_diameter": [
-        "1.6"
+        "1.5"
     ],
     "filament_flow_ratio": [
         "1.25"
@@ -34,16 +37,19 @@
     "is_custom_defined": "0",
     "name": "PET",
     "nozzle_temperature": [
-        "270"
+        "260"
     ],
     "nozzle_temperature_initial_layer": [
-        "270"
+        "260"
     ],
     "nozzle_temperature_range_high": [
         "280"
     ],
     "nozzle_temperature_range_low": [
         "240"
+    ],
+    "pellet_flow_coefficient": [
+        "0.565884"
     ],
     "temperature_vitrification": [
         "180"
