@@ -15,10 +15,10 @@
         "0"
     ],
     "filament_flow_ratio": [
-        "0.83"
+        "1"
     ],
     "filament_max_volumetric_speed": [
-        "5"
+        "8"
     ],
     "filament_settings_id": [
         "Makers PLA"
