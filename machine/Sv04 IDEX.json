@@ -19,7 +19,7 @@
         "0",
         "0"
     ],
-    "machine_end_gcode": "G1 E-1.0 F2100 ; retract\nG92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-2.0 F720 ; move print head up & retract filament\nG4 ; wait\nM104 T0 S0 ; turn off temperature\nM104 T1 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\n\nT1\n_PARK_TOOL\nT2\n_PARK_TOOL\n\n;G1 X0 Y105 F3000 ; park print head\n\n\nM84 ; disable motors",
+    "machine_end_gcode": "G1 E-1.0 F2100 ; retract\nG92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-2.0 F720 ; move print head up & retract filament\nG4 ; wait\nM104 T0 S0 ; turn off temperature\nM104 T1 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\n\nT0\n_PARK_TOOL\nT1\n_PARK_TOOL\n\n;G1 X0 Y105 F3000 ; park print head\n\n\nM84 ; disable motors",
     "machine_max_acceleration_x": [
         "6400"
     ],

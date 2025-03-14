@@ -1,0 +1,37 @@
+{
+    "cool_plate_temp": [
+        "0"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "dont_slow_down_outer_wall": [
+        "1"
+    ],
+    "eng_plate_temp": [
+        "40"
+    ],
+    "filament_cost": [
+        "0"
+    ],
+    "filament_flow_ratio": [
+        "1"
+    ],
+    "filament_max_volumetric_speed": [
+        "8"
+    ],
+    "filament_settings_id": [
+        "Makers PLA +"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "40"
+    ],
+    "inherits": "My Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Makers PLA +",
+    "textured_plate_temp": [
+        "40"
+    ],
+    "version": "2.1.1.0"
+}
