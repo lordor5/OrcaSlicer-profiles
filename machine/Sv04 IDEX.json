@@ -3,6 +3,7 @@
         "35",
         "35"
     ],
+    "enable_filament_ramming": "0",
     "extruder_colour": [
         "#FCE94F",
         "#FCE94F"
@@ -36,7 +37,7 @@
         "40"
     ],
     "machine_pause_gcode": "PAUSE",
-    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\n\n\n; ----------- Temperatures ------------------------------\nM104 T0 S[first_layer_temperature] ; set extruder temp\n\n{if is_extruder_used[1]}\n\n   M104 T1 S[first_layer_temperature] ;preheat second extruder if used\n\n{endif}\n\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\n; ----------------- Home and Calibrations ------------------\nG28 ; home all\nZ_TILT_ADJUST\nADAPTIVE_BED_MESH_CALIBRATE AREA_START={first_layer_print_min[0]},{first_layer_print_min[1]} AREA_END={first_layer_print_max[0]},{first_layer_print_max[1]}\nBED_MESH_PROFILE SAVE=default\nBED_MESH_PROFILE LOAD=default\n\n; ---------------- Modes ----------------------\n\n;ACTIVATE_COPY_MODE\n;ACTIVATE_MIRROR_MODE\n\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n\n; ----------------- Purge Line ------------------------------\nG1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]} Z0.8 F{initial_layer_travel_speed}\nG1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]+15} E30 F{bridge_speed}\nG29 E0.0\n",
+    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\n\n\n; ----------- Temperatures ------------------------------\nM104 T0 S[first_layer_temperature] ; set extruder temp\n\n{if is_extruder_used[1]}\n   M104 T1 S[first_layer_temperature] ;preheat second extruder if used\n   XY_offset_dual\n{endif}\n\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\n; ----------------- Home and Calibrations ------------------\nG28 ; home all\nZ_TILT_ADJUST\n;BED_MESH_CALIBRATE ADAPTIVE=1\n;ADAPTIVE_BED_MESH_CALIBRATE AREA_START={first_layer_print_min[0]},;{first_layer_print_min[1]} AREA_END={first_layer_print_max[0]},;{first_layer_print_max[1]}\n;BED_MESH_PROFILE SAVE=default\nBED_MESH_PROFILE LOAD=default\n\nXY_offset_dual X_OFFSET=-3.3 Y_OFFSET=-0.1\n\n; ---------------- Modes ----------------------\n\n;ACTIVATE_COPY_MODE\n;ACTIVATE_MIRROR_MODE\n\nM109 S[first_layer_temperature] ; wait for extruder temp\n;G92 E0.0\n\n; ----------------- Purge Line ------------------------------\nCLEAN_NOZZLE\n;G1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]} Z0.8 F{initial_layer_travel_speed*60}\n;G1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]+50} E10 F{bridge_speed*60}\n;G92 E0.0\n",
     "max_layer_height": [
         "0.32",
         "0.32"
@@ -111,7 +112,7 @@
     ],
     "single_extruder_multi_material": "0",
     "support_multi_bed_types": "1",
-    "time_cost": "2",
+    "time_cost": "0.5",
     "travel_slope": [
         "3",
         "3"
