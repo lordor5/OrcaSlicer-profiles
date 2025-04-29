@@ -82,6 +82,10 @@
         "All Surfaces",
         "All Surfaces"
     ],
+    "retract_on_top_layer": [
+        "1",
+        "1"
+    ],
     "retract_restart_extra": [
         "0",
         "0"
@@ -111,8 +115,7 @@
         "45"
     ],
     "single_extruder_multi_material": "0",
-    "support_multi_bed_types": "1",
-    "time_cost": "0.5",
+    "time_cost": "1.2",
     "travel_slope": [
         "3",
         "3"
